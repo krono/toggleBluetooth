@@ -1,7 +1,7 @@
 toggleBluetooth
 ===============
 
-Toggle the Bluetooth state on OS X.
+Toggle the Bluetooth state on OS X.  
 Attention: uses OS X private API.
 
 How to build
