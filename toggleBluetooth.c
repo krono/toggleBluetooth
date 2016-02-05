@@ -18,24 +18,21 @@ bool IOBluetoothPreferencesAvailable(void);
 
 int main(int argc, const char* argv[])
 {
-  int result = EXIT_SUCCESS;
   if (!IOBluetoothPreferencesAvailable()) {
     fprintf(stderr, "Error: Bluetooth not available\n");
-    result = EXIT_FAILURE;
-  } else {
-    bool state = IOBluetoothPreferenceGetControllerPowerState();
-    if (argc == 2 && strncmp(argv[1], "status", strlen("status")) == 0) {
-      printf("Bluetooth is %s\n", state ? "on" : "off");
-    } else {
-      IOBluetoothPreferenceSetControllerPowerState(!state);
-      if (state == IOBluetoothPreferenceGetControllerPowerState()) {
-        usleep(1000000); // wait for state switch
-        if (state == IOBluetoothPreferenceGetControllerPowerState()) {
-          // nothing changed, failure
-          result = EXIT_FAILURE;
-        }
-      }
-    }
+    return EXIT_FAILURE;
   }
-  return result;
+
+  bool state = IOBluetoothPreferenceGetControllerPowerState();
+  if (argc == 2 && strncmp(argv[1], "status", strlen("status")) == 0) {
+    printf("Bluetooth is %s\n", state ? "on" : "off");
+    return EXIT_SUCCESS;
+  }
+
+  IOBluetoothPreferenceSetControllerPowerState(!state);
+  usleep(1000000); // wait for state switch
+  if (state == IOBluetoothPreferenceGetControllerPowerState()) {
+    // nothing changed, failure
+    return EXIT_FAILURE;
+  }
 }
