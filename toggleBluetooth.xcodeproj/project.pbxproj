@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F605AE5E1C648F1D0048B787 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F605AE5D1C648F1D0048B787 /* main.m */; };
+		F605AE651C648F440048B787 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F605AE641C648F440048B787 /* IOBluetooth.framework */; };
+		F605AE691C6498B20048B787 /* toggleBluetooth.c in Sources */ = {isa = PBXBuildFile; fileRef = F605AE681C6498B20048B787 /* toggleBluetooth.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +25,8 @@
 
 /* Begin PBXFileReference section */
 		F605AE5A1C648F1D0048B787 /* toggleBluetooth */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = toggleBluetooth; sourceTree = BUILT_PRODUCTS_DIR; };
-		F605AE5D1C648F1D0048B787 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F605AE641C648F440048B787 /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = System/Library/Frameworks/IOBluetooth.framework; sourceTree = SDKROOT; };
+		F605AE681C6498B20048B787 /* toggleBluetooth.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = toggleBluetooth.c; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F605AE651C648F440048B787 /* IOBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +44,7 @@
 		F605AE511C648F1D0048B787 = {
 			isa = PBXGroup;
 			children = (
+				F605AE641C648F440048B787 /* IOBluetooth.framework */,
 				F605AE5C1C648F1D0048B787 /* toggleBluetooth */,
 				F605AE5B1C648F1D0048B787 /* Products */,
 			);
@@ -57,7 +61,7 @@
 		F605AE5C1C648F1D0048B787 /* toggleBluetooth */ = {
 			isa = PBXGroup;
 			children = (
-				F605AE5D1C648F1D0048B787 /* main.m */,
+				F605AE681C6498B20048B787 /* toggleBluetooth.c */,
 			);
 			path = toggleBluetooth;
 			sourceTree = "<group>";
@@ -118,7 +122,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F605AE5E1C648F1D0048B787 /* main.m in Sources */,
+				F605AE691C6498B20048B787 /* toggleBluetooth.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +148,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -186,7 +190,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
